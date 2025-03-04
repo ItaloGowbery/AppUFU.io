@@ -3,11 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>appUFU</title>
+    <title>Troca de Imagem</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
-    <div style="text-align: center;">
-        <img src="src/imagem.jpeg" alt="Imagem centralizada">
-    </div>
+    <img id="imagem" src="src/imagem.jpeg" onclick="trocarImagem()">
+    
+    <script>
+        function trocarImagem() {
+            let img = document.getElementById("imagem");
+            img.src = img.src.includes("src/imagem.jpeg") ? "src/menu.jpeg" : "src/imagem.jpeg";
+        }
+    </script>
 </body>
 </html>
