@@ -21,7 +21,7 @@
             transition: transform 0.3s ease-in-out; /* Transição suave */
         }
         .zoom {
-            transform: scale(1.05); /* Zoom de 4% */
+            transform: scale(1.04); /* Zoom de 4% */
         }
     </style>
 </head>
@@ -32,13 +32,13 @@
         function trocarImagem() {
             let img = document.getElementById("imagem");
             
-            // Verifica se a imagem atual é o menu.png ou teste.png
+            // Verifica se a imagem atual é o menu.jpeg ou teste.png
             if (img.src.includes("menu.jpeg")) {
                 img.src = "src/teste.png"; 
                 img.classList.add("zoom"); // Adiciona o zoom quando for teste.png
             } else if (img.src.includes("teste.png")) {
                 img.src = "src/menu.jpeg";
-                img.classList.remove("zoom"); // Remove o zoom quando voltar para menu.png
+                img.classList.remove("zoom"); // Remove o zoom quando voltar para menu.jpeg
             }
         }
 
