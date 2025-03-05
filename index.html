@@ -18,6 +18,7 @@
             max-width: 100%;
             max-height: 100vh;
             object-fit: contain;
+            cursor: pointer;
         }
         
         /* Popup style */
@@ -44,7 +45,7 @@
     </style>
 </head>
 <body>
-    <img id="imagem" src="src/imagem.jpeg" onclick="verificarClique(event)">
+    <img id="imagem" src="src/imagem.jpg" onclick="verificarClique(event)">
     
     <!-- QR Code Popup -->
     <div id="popup" onclick="fecharPopup()">
@@ -60,23 +61,15 @@
             const x = event.clientX - rect.left;
             const y = event.clientY - rect.top;
             
-            // Define bottom left region (25% of width and 25% of height from bottom)
+            // Define bottom-left region (25% of width and 25% of height from bottom)
             const regionWidth = rect.width * 0.25;
             const regionHeight = rect.height * 0.25;
             const regionYStart = rect.height - regionHeight;
 
-            if (img.src.includes("imagem.jpeg") && 
-                x <= regionWidth && 
-                y >= regionYStart) {
+            // Check if the click is within the bottom-left region
+            if (x <= regionWidth && y >= regionYStart) {
                 mostrarPopup();
-            } else {
-                trocarImagem();
             }
-        }
-
-        function trocarImagem() {
-            let img = document.getElementById("imagem");
-            img.src = img.src.includes("src/imagem.jpeg") ? "src/menu.jpeg" : "src/imagem.jpeg";
         }
 
         function mostrarPopup() {
