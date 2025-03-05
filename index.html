@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UFU digital</title>
-    body {
+    <style>
+        body {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -15,19 +16,18 @@
         }
         img {
             max-width: 100%;
-            max-height: 100vh;   <style>
-     
+            max-height: 100vh;
             object-fit: contain;
         }
     </style>
 </head>
 <body>
-    <img id="imagem" src="src/rafael.png" onclick="trocarImagem()">
+    <img id="imagem" src="src/imagem.png" onclick="trocarImagem()">
     
     <script>
         function trocarImagem() {
             let img = document.getElementById("imagem");
-            img.src = img.src.includes("src/rafael.png") ? "src/menu.jpeg" : "src/rafael.png";
+            img.src = img.src.includes("src/imagem.png") ? "src/menu.png" : "src/imagem.png";
         }
 
         window.addEventListener("resize", ajustarImagem);
