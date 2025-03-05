@@ -19,6 +19,10 @@
             max-height: 100vh;
             object-fit: contain;
         }
+        .zoom {
+            transform: scale(1.04); /* Zoom de 4% */
+            transition: transform 0.3s ease-in-out; /* Transição suave */
+        }
     </style>
 </head>
 <body>
@@ -27,7 +31,13 @@
     <script>
         function trocarImagem() {
             let img = document.getElementById("imagem");
-            img.src = img.src.includes("src/menu.png") ? "src/teste.png" : "src/menu.png";
+            if (img.src.includes("src/menu.png")) {
+                img.src = "src/teste.png";
+                img.classList.add("zoom"); // Adiciona o zoom quando a imagem é trocada para teste.png
+            } else {
+                img.src = "src/menu.png";
+                img.classList.remove("zoom"); // Remove o zoom ao voltar para menu.png
+            }
         }
 
         window.addEventListener("resize", ajustarImagem);
