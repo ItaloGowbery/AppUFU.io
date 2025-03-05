@@ -18,10 +18,10 @@
             max-width: 100%;
             max-height: 100vh;
             object-fit: contain;
+            transition: transform 0.3s ease-in-out; /* Transição suave */
         }
         .zoom {
             transform: scale(1.04); /* Zoom de 4% */
-            transition: transform 0.3s ease-in-out; /* Transição suave */
         }
     </style>
 </head>
@@ -33,7 +33,7 @@
             let img = document.getElementById("imagem");
             if (img.src.includes("src/menu.png")) {
                 img.src = "src/teste.png";
-                img.classList.add("zoom"); // Adiciona o zoom quando a imagem é trocada para teste.png
+                img.classList.add("zoom"); // Adiciona o zoom para a imagem teste.png
             } else {
                 img.src = "src/menu.png";
                 img.classList.remove("zoom"); // Remove o zoom ao voltar para menu.png
