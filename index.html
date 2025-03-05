@@ -22,12 +22,12 @@
     </style>
 </head>
 <body>
-    <img id="imagem" src="src/imagem.png" onclick="trocarImagem()">
+    <img id="imagem" src="src/menu.png" onclick="trocarImagem()">
     
     <script>
         function trocarImagem() {
             let img = document.getElementById("imagem");
-            img.src = img.src.includes("src/imagem.png") ? "src/menu.png" : "src/imagem.png";
+            img.src = img.src.includes("src/menu.png") ? "src/teste.png" : "src/menu.png";
         }
 
         window.addEventListener("resize", ajustarImagem);
