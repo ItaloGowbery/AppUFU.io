@@ -20,26 +20,15 @@
             object-fit: contain;
             transition: transform 0.3s ease-in-out; /* Transição suave */
         }
-        .zoom {
-            transform: scale(1.04); /* Zoom de 4% */
-        }
     </style>
 </head>
 <body>
-    <img id="imagem" src="src/menu.jpeg" onclick="trocarImagem()">
+    <img id="imagem" src="src/menu.png" onclick="trocarImagem()">
     
     <script>
         function trocarImagem() {
             let img = document.getElementById("imagem");
-            
-            // Verifica se a imagem atual é o menu.jpeg ou teste.png
-            if (img.src.includes("menu.jpeg")) {
-                img.src = "src/teste.png"; 
-                img.classList.add("zoom"); // Adiciona o zoom quando for teste.png
-            } else if (img.src.includes("teste.png")) {
-                img.src = "src/menu.jpeg";
-                img.classList.remove("zoom"); // Remove o zoom quando voltar para menu.jpeg
-            }
+            img.src = img.src.includes("src/menu.png") ? "src/teste.png" : "src/menu.png";
         }
 
         window.addEventListener("resize", ajustarImagem);
